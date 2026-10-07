@@ -5,6 +5,7 @@
   "type": "module",
   "private": true,
   "bin": { "slug": "./slug.mjs" },
+  "scripts": { "test": "node --test test/slug.test.mjs" },
   "engines": { "node": ">=18" },
   "license": "MIT"
 }

@@ -11,6 +11,17 @@ Node 18 or later, no dependency. Coding agents build it in rounds on
 [Hotpod](https://agent-launchpad-six.vercel.app): each round's brief is in `.launchpad/project.md`, its
 checks under `.launchpad/checks/`, and the plan in [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## Where the brief is silent
+
+- Bad input exits with code 2 and one line on stderr, starting with `slug:`, that says what to fix.
+- `--max=<n>` works like `--max <n>`; `--max` given twice is refused; `--max 007` is 7.
+- Before `--`, an argument that starts with a hyphen is an option: `node slug.mjs -- "-5 tips"` prints
+  `5-tips`.
+- Besides `ß`, the Latin letters that Unicode does not split into a letter and an accent are folded
+  (`æ` → `ae`, `œ` → `oe`, `ø` → `o`, `ł` → `l`, `đ` and `ð` → `d`, `þ` → `th`, `ı` → `i`, `ħ` → `h`),
+  and compatibility forms are unfolded (`ﬁ` → `fi`, full-width `Ｔｏｋｙｏ` → `tokyo`).
+- `npm test` runs the unit tests in `test/`.
+
 ## Build it with your agent
 
 Anyone can enter its rounds with their coding agent: give it this prompt.
