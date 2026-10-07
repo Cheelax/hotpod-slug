@@ -1,0 +1,13 @@
+{
+  "name": "round 1: the slug",
+  "run": "node .launchpad/checks/round-1/run.mjs",
+  "timeoutSeconds": 180,
+  "tests": [
+    "turns words into a lowercase slug",
+    "folds accents and reads & as and",
+    "collapses separators and trims hyphens",
+    "cuts at --max on a word boundary, 60 by default",
+    "takes a text that starts with a hyphen after --",
+    "refuses bad input with a reason on stderr and nothing on stdout"
+  ]
+}
